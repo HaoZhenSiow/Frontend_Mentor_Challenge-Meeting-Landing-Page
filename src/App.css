@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+/* root font size must be fixed */
+/* scale 1.067, 14px, 320px viewport and 1.2 18px, 1920px viewport */
+/* viewport - viewport, fluid-container-padding - fluid container horizontal padding */
+:root {
+  --viewport: 1440;
+  --viewport-s: 375;
+  --viewport-m: 768;
+  --viewport-l: 1440;
+  --viewport-min: 375;
+  --viewport-max: 1920;
+  --fluid-container-padding-min: 24;
+  --fluid-container-padding-s: 24;
+  --fluid-container-padding-l: 165;
+
+  --viewport-diff-s: (var(--viewport-m) - var(--viewport-s));
+  --viewport-diff-b: (var(--viewport-l) - var(--viewport-m));
+  --viewport-diff-f: (var(--viewport-l) - var(--viewport-s));
+
+  --multiplier-s-var: ((var(--viewport) - var(--viewport-s))/var(--viewport-diff-s));
+  --multiplier-s-max: ((var(--viewport-max) - var(--viewport-s))/var(--viewport-diff-s));
+  --multiplier-s-min: ((var(--viewport-min) - var(--viewport-s))/var(--viewport-diff-s));
+
+  --multiplier-b-var: ((var(--viewport) - var(--viewport-m))/var(--viewport-diff-b));
+  --multiplier-b-max: ((var(--viewport-max) - var(--viewport-m))/var(--viewport-diff-b));
+  --multiplier-b-min: ((var(--viewport-min) - var(--viewport-m))/var(--viewport-diff-b));
+
+  --multiplier-f-var: ((var(--viewport) - var(--viewport-s))/var(--viewport-diff-f));
+  --multiplier-f-max: ((var(--viewport-max) - var(--viewport-s))/var(--viewport-diff-f));
+  --multiplier-f-min: ((var(--viewport-min) - var(--viewport-s))/var(--viewport-diff-f));
+  
+  --fluid-container-width-max: (var(--viewport-max) - ((var(--fluid-container-padding-s) + (var(--fluid-container-padding-l) - var(--fluid-container-padding-s)) * var(--multiplier-f-max)) * 2));
+  --fluid-container-padding: 0 max(
+      ((var(--viewport) - var(--fluid-container-width-max)) / 2) * 1px,
+      (var(--fluid-container-padding-s) + (var(--fluid-container-padding-l) - var(--fluid-container-padding-s)) * var(--multiplier-f-var)) * 1px,
+      var(--fluid-container-padding-min) * 1px);
+
+  --fluid-lg: clamp(1.2101247690rem, clac(0.8922777225rem + 1.58923523100vw), 2.79936rem);
+  --fluid-h1: clamp(calc(40px + (48px - 40px) * var(--multiplier-s-min)), calc(40px + (48px - 40px) * var(--multiplier-s-var)), calc(40px + (48px - 40px) * var(--multiplier-s-max)));
+  --h1-line-height: clamp(calc(44px + (48px - 44px) * var(--multiplier-s-min)), calc(44px + (48px - 44px) * var(--multiplier-s-var)), calc(44px + (48px - 44px) * var(--multiplier-s-max)));
+  --fluid-h2: clamp(calc(32px + (40px - 32px) * var(--multiplier-s-min)), calc(32px + (40px - 32px) * var(--multiplier-s-var)), calc(32px + (40px - 32px) * var(--multiplier-s-max)));
+  --h2-line-height: clamp(calc(36px + (44px - 36px) * var(--multiplier-s-min)), calc(36px + (44px - 36px) * var(--multiplier-s-var)), calc(36px + (44px - 36px) * var(--multiplier-s-max)));
+  --h2-mt: clamp(calc(16px + (24px - 16px) * var(--multiplier-s-min)), calc(16px + (24px - 16px) * (1 - var(--multiplier-s-var))), calc(16px + (24px - 16px) * var(--multiplier-s-max)));
+  --fluid-h3: clamp(0.9961778750rem, clac(0.8714134500rem + 0.62382212500vw), 1.62000rem);
+  --fluid-h4: clamp(0.9336250000rem, clac(0.8503500000rem + 0.41637500000vw), 1.35000rem);
+  --fluid-h5: 16px;
+  --fluid-h6: clamp(0.8200562324rem, clac(0.7965674789rem + 0.11744376760vw), 0.93750rem);
+  --fluid-sm: clamp(0.7685625421rem, clac(0.7660250505rem + 0.01268745789vw), 0.78125rem);
+  --fluid-line-height: calc(1.8em - .4 * ((100vw - 29.08324552em) / (77.58342115)));
+
+  --blue: #4D96A9;
+  --light-blue: #8FE3F9;
+  --purple: #855FB1;
+  --light-purple: #D9B8FF;
+  --black: #28283D;
+  --grey: #87879D;
+  --white: #FAFAFA;
+
+  --hero-offset: clamp(calc(-20px + (-26px - -20px) * var(--multiplier-s-max)), calc(-20px + (-26px - -20px) * var(--multiplier-s-var)), calc(-20px + (-26px - -20px) * var(--multiplier-s-min)));
+  --hero-image-mb: clamp(calc(48px + (72px - 48px) * var(--multiplier-s-min)), calc(48px + (72px - 48px) * var(--multiplier-s-var)), calc(48px + (72px - 48px) * var(--multiplier-s-max)));
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  :root {
+    --px48-px64: clamp(calc(48px + (64px - 48px) * var(--multiplier-b-min)), calc(48px + (64px - 48px) * var(--multiplier-b-var)), calc(48px + (64px - 48px) * var(--multiplier-b-max)));
+    --fluid-h1: var(--px48-px64);
+    --h1-line-height: var(--px48-px64);
+    --fluid-h5: clamp(calc(16px + (18px - 16px) * var(--multiplier-b-min)), calc(16px + (18px - 16px) * var(--multiplier-b-var)), calc(16px + (18px - 16px) * var(--multiplier-b-max)));
+    --fluid-h2: 40px;
+    --h2-line-height: 44px;
+    --h2-mt: 16px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 769px) {
+  :root {
+    --hero-offset: clamp(calc(620px + (1078px - 620px) * var(--multiplier-b-min)), calc(620px + (1078px - 620px) * var(--multiplier-b-var)), calc(620px + (1078px - 620px) * var(--multiplier-b-max)));
   }
 }
+
+/* to prevent font-size looping use :not()*/
+*:not(html, small, blockquote *)  {
+  font-weight: 500;
+  font-size: var(--fluid-h5);
+}
+h1 {
+  font-size: var(--fluid-h1);
+  line-height: var(--h1-line-height);
+  color: var(--black);
+  font-weight: 900;
+}
+h2 {
+  font-size: var(--fluid-h2);
+  line-height: var(--h2-line-height);
+  color: var(--black);
+  font-weight: 900;
+  margin-top: var(--h2-mt);
+  margin-bottom: 32px;
+}
+h3 {font-size: var(--fluid-h3);}
+h4 {font-size: var(--fluid-h4);} 
+/* h5 is alread set to var(--heading-5)*/
+h6 {font-size: var(--fluid-h6);} 
+p {line-height: 26px;}
