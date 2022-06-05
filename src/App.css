@@ -47,7 +47,7 @@
   --fluid-sm: clamp(0.7685625421rem, clac(0.7660250505rem + 0.01268745789vw), 0.78125rem);
   --fluid-line-height: calc(1.8em - .4 * ((100vw - 29.08324552em) / (77.58342115)));
 
-  --blue: #4D96A9;
+  --blue: #4d96a9;
   --light-blue: #8FE3F9;
   --purple: #855FB1;
   --light-purple: #D9B8FF;
