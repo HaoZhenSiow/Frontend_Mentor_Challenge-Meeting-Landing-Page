@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/css/main.4a985bbf.css",
-    "main.js": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/main.ddd42b2a.js",
+    "main.css": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/css/main.cf20626c.css",
+    "main.js": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/main.735cba02.js",
     "static/js/787.d24e7e5f.chunk.js": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/787.d24e7e5f.chunk.js",
     "index.html": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/index.html",
-    "main.4a985bbf.css.map": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/css/main.4a985bbf.css.map",
-    "main.ddd42b2a.js.map": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/main.ddd42b2a.js.map",
+    "main.cf20626c.css.map": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/css/main.cf20626c.css.map",
+    "main.735cba02.js.map": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/main.735cba02.js.map",
     "787.d24e7e5f.chunk.js.map": "/Frontend_Mentor_Challenge-Meeting-Landing-Page/static/js/787.d24e7e5f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a985bbf.css",
-    "static/js/main.ddd42b2a.js"
+    "static/css/main.cf20626c.css",
+    "static/js/main.735cba02.js"
   ]
 }
