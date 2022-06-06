@@ -102,3 +102,7 @@ h4 {font-size: var(--fluid-h4);}
 /* h5 is alread set to var(--heading-5)*/
 h6 {font-size: var(--fluid-h6);} 
 p {line-height: 26px;}
+
+body {
+  background-color: var(--white);
+}

@@ -42,12 +42,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      const updateViewportWidth = () => {
-        const r = document.querySelector(':root');
-        r.style.setProperty('--viewport', window.innerWidth);
-      }
-      updateViewportWidth();
-      window.addEventListener('resize', updateViewportWidth);
+      // const updateViewportWidth = () => {
+      //   const r = document.querySelector(':root');
+      //   const rs = getComputedStyle(rs);
+      //   const myViewport = rs.getPropertyValue('--viewport');
+      //   console.log(myViewport);
+      //   // document.documentElement.style.setProperty('--viewport', window.innerWidth);
+      // }
+      // updateViewportWidth();
+      // window.addEventListener('resize', updateViewportWidth);
     </script>
   </body>
 </html>

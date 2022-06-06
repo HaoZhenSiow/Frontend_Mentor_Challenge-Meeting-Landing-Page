@@ -3,7 +3,7 @@ import styled from "styled-components";
 import FeatureImages from "./FeatureImages";
 import FeatureContent from "./FeatureContent";
 
-const Sect = styled.section`
+const MAIN = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,10 +11,10 @@ const Sect = styled.section`
 
 const Features = () => {
   return (
-    <Sect aria-labelledby="feature">
+    <MAIN>
       <FeatureImages/>
       <FeatureContent/>
-    </Sect>
+    </MAIN>
     
   );
 };

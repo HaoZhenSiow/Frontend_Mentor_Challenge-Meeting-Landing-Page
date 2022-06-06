@@ -24,11 +24,11 @@ const Text = styled.text`
 
 const Indicator = props => {
   return (
-    <SVG width="56" height="140" alt={props.alt}>
+    <SVG width="56" height="140">
       <g>
-        <line id="svg_3" y2="84" x2="28" y1="0" x1="28" stroke="#87879d" strokeOpacity={0.25} fill="none"/>
-        <ellipse ry="27" rx="27" id="svg_4" cy="112" cx="28" stroke="#87879d" strokeOpacity={0.25} fill="none"/>
-        <Text font-weight="normal" text-anchor="start" stroke-width="0" id="svg_6" y="117" x="19" stroke="none" fill="#87879d">{props.children}</Text>
+        <line y2="84" x2="28" y1="0" x1="28" stroke="#87879d" strokeOpacity={0.25} fill="none"/>
+        <ellipse ry="27" rx="27" cy="112" cx="28" stroke="#87879d" strokeOpacity={0.25} fill="none"/>
+        <Text font-weight="normal" text-anchor="start" stroke-width="0" y="117" x="19" stroke="none" fill="#87879d">{props.children}</Text>
       </g>
     </SVG>
   );
